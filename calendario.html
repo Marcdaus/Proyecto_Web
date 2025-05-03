@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PROA-Calendario</title>
+  <style>
+     /* Estilos de ejemplo */
+    .calendario {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .calendario td, table.calendario th {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      width: 14.28%;
+    }
+    .calendario td.celda_vacia {
+      background-color: #f9f9f9;
+      cursor: default;
+      color: #9c9c9c;
+    }
+    .calendario td.selected {
+      background-color: #eee;
+    }
+    .encabezadoo_tabla {
+      background-color: gray;
+      color: white;
+    }
+    .num_dia{
+      font-size: 10px;
+    }
+    .evento{
+      background-color: #9c9c9c;
+    }
+    .hoy{
+      background-color: yellow;
+    }
+    
+    
+  </style>
+</head>
+<body>
+
+  <!-- Leyenda -->
+  <div class="leyenda">
+    <img src="imagen.jpg" alt="cuadrado rosa ">
+    <span>Exámenes</span><br>
+    <img src="imagen.jpg" alt="cuadrado verde ">
+    <span>Tareas</span>
+  </div>
+
+  <!-- Desplegable de mes -->
+  <select class="desplegable" id="desplegable_mes">
+<!-- Se generara desde el JS -->
+  </select>
+
+  <!-- Calendario -->
+  <table class="calendario" id="calendario_global">
+<!-- Se generara desde el JS -->
+  </table>
+
+  <div id="posit-info">
+    <p id="infoText">Haz clic en un día.</p>
+  </div>
+
+  <script src="js/calendario.js"></script>
+</body>
+</html>
