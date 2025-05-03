@@ -11,8 +11,8 @@
     const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
     const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
     
-    const eventos = { tareas: [ { id: 1, estado: "enviada", fecha_apertura: "29/05/2025", fecha_cierre: "1/05/2025", fecha_entrega: "30/05/2025", nickname: "marc", descripción: "hay que realizar lo aprendido en clase", tipo_tarea: "test", ID_asignatura: "fisica"},
-    { id: 2, estado: "enviada", fecha_apertura: "10/05/2025", fecha_cierre: "1/05/2025", fecha_entrega: "13/05/2025", nickname: "marc", descripción: "tienes que hacer los programas 1 y 2 ", tipo_tarea: "practico", ID_asignatura: "programcion"}]};
+    const eventos = { tareas: [ { id: 1, estado: "enviada", fecha_apertura: "29/05/2025", fecha_cierre: "1/05/2025", fecha_entrega: "30/05/2025", nickname: "marc", descripción: "hay que realizar lo aprendido en clase", tipo_tarea: "test", ID_asignatura: "fisica", nombre: "Tarea_1" },
+    { id: 2, estado: "enviada", fecha_apertura: "10/05/2025", fecha_cierre: "1/05/2025", fecha_entrega: "13/05/2025", nickname: "marc", descripción: "tienes que hacer los programas 1 y 2 ", tipo_tarea: "practico", ID_asignatura: "programcion", nombre: "Tarea_2" }]};
     
     // =============
     // desplegable
