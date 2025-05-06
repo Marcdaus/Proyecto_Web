@@ -17,20 +17,20 @@
     <form id="Contacto">
 
         <!-- Texto y estructura del input del nombre -->
-        <label>Nombre </label>
+        <label for="nombre">Nombre </label>
         <input id="nombre" type="text" placeholder="Introduzca aquí su nombre de usuario" required autofocus>
 
         <!-- Texto y estructura del input de la institución-->
-        <label>Institución </label>
+        <label for="institucion">Institución </label>
         <input id="institucion" type="text" placeholder="Introduzca la institución a la que pertenece" required >
 
         <!-- Texto y estructura del input del email -->
-        <label>Correo electrónico </label>
+        <label for="email">Correo electrónico </label>
         <input id="email" type="email" placeholder="Introduzca su correo electrónico" required>
 
         <!-- Texto y estructura del input de la consulta -->
-        <label>Consulta </label>
-        <input id="consulta" type="text" placeholder="Introduzca la razón por la cuál se pone en contacto con nosostros" required >
+        <label for="contenido">Consulta </label>
+        <textarea id="contenido" name="contenido" required></textarea>
 
         <!-- Aquí están los botones de enviar y cancelar del formulario-->
         <input id="Enviar" type="submit"value="Enviar">
@@ -39,4 +39,4 @@
     </form>
 
 </body>
-</html>
+</html>  
