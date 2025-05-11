@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="js/registro.js"defer></script> 
+    <title>registro</title>
+    <!--<link rel="stylesheet" href="css/registro.css">-->
+
+</head>
+<body>
+<!-- -------------------------------------------------------- registro  ----------------------------------------------------------------->
+<!-- esta es la seccion del registro-->
+<section id = "registro">
+<!-- Esto es una division y aqui habrá texto corporativo y un fondo gris translucido--->
+<div class = "div_texto_registro">
+    <h1 class = "titulo1_blanco">Crea tu cuenta en PROA para poder acceder a la DEMO ya</h1>
+    <p class = "texto_blanco"> Potencia la comunicación y el aprendizaje en tu institución </p> 
+
+<!-- Esto es una division y aqui estara el formulario para registrarte--->
+</div>
+<div class = "div_registro">
+    <h1 class = "titulo1_negro">Regístrate a PROA</h1>
+
+<!-- formulario credenciales --->
+ <!-- Las ids se utilizaran para seguidamente sacar la infomacion de los inputs --->
+    <form id = "registro_credenciales" class = "formulario active" >
+
+        <p class = "texto_input"> Introduzca su nombre</p> 
+        <input id = "nombre" type = "text" placeholder = "nombre" autofocus ></input>
+
+        <p class = "texto_input"> Introduzca su institución</p> 
+        <input id = "institucion" type = "text" placeholder = "institución"></input>
+
+        <p class = "texto_input" > Introduzca su email</p> 
+        <input type = "email" placeholder = "email" ></input>
+
+        <br>
+        <!-- este input llama a la funcion guardar_credenciales para comprobar infomacion y guardarla --->
+        <input type = "submit" value = "continuar"></input>
+        
+    </form>
+    <!-- formulario contraseña --->
+    <form id = "registro_contraseña" class = "formulario">
+
+        <p class = "texto_input"> Introduzca una contraseña</p> 
+        <input id = "contraseña" type = "text" placeholder = "contraseña"  ></input>
+
+        <p class = "texto_input"> confirme su contraseña</p> 
+        <input id = "contraseña2" type = "text" placeholder = "contraseña"></input>
+
+        <br>
+        <!-- con este boton se llama a una funcion para vovler a atras --->
+        <button type = "button" onclick="volver()">atras</button>
+
+        <!-- este input llama a la funcion guardar_credenciales para comprobar infomacion y guardarla --->
+        <input type = "submit" value = "enviar"></input>
+
+    </form> 
+</div>
+</section>
+<!-- -------------------------------------------------------- registro (js)  ----------------------------------------------------------------->
+
+
+</body>
+</html>

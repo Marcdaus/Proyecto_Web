@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Código js del login (link) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="js/login.js" defer></script>
+    <title>Login</title>
+</head>
+<body>
+    <!-- Aquí inicia la caja del login -->
+    <div class="Caja_login">
+        <h2>Bienvenido de vuelta</h2>
+        <!-- Contiene los elementos del login -->
+        <form id="login">
+            <!-- Texto y estructura del input del email -->
+            <label>Email </label>
+            <input id="email" type="email" placeholder="Introduzca su email" required autofocus>
+
+            <!-- Texto y estructura del input de la contraseña -->
+            <label>Contraseña </label>
+            <input id="password" type="password" placeholder="Introduzca su contraseña" required>
+            <!-- Botón para enviar el formulario -->
+            <input type="submit"value="Login">
+        </form>
+    </div>
+    <!-- Aquí inicia la caja del registro-->
+    <div class="Caja_registro">
+        <h2>¿Aún no tienes una cuenta?</h2>
+        <!-- Botón para acceder al registro -->
+        <form action="registro.html" method="get">
+            <input type="submit" value="Regístrate">
+          </form>
+    </div>
+    
+</body>
+</html>

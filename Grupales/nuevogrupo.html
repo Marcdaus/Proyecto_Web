@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links del js y del css -->
+    <script src="js/Crear grupos.js" defer></script>
+
+    <title>Nuevo grupo</title>
+</head>
+<body>
+    <!-- Menú migas de pan -->
+    <div>
+        <a href="">CREAR TAREA </a>/ <a href="añadirgrupos.html">AÑADIR GRUPO</a>/<a href="nuevogrupo.html">NUEVO GRUPO</a>
+       </div>
+
+       <div class="Elementos_grupo">
+
+        <!-- Nombre del grupo -->
+         <label for="Nombre_grupo">NOMBRE DEL GRUPO</label>
+         <input  id="Nombre_grupo" value="Grupo" type="text" placeholder="Introduce el nombre del grupo" required>
+
+         <!-- Listado de alumnos -->
+          <p>SELECCIONA LOS ALUMNOS QUE FORMARÁN PARTE DEL GRUPO</p>
+          <ul id="lista_alumnos">
+
+          </ul>
+        </div>
+        <div class="Botones">
+          <!-- Botones de guardar y enviar -->
+          <input type="submit" value="Cancelar" onclick="window.location.href='añadirgrupos.html'">
+          <input type="submit" value="Guardar" onclick="window.location.href='añadirgrupos.html'">
+        </div>
+    
+</body>
+</html>
