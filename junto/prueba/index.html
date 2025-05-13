@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Asignaturas Favoritas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fcecf4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem;
+      background-color: #fcecf4;
+    }
+
+    #gofreBtn {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+
+    dialog {
+      border: none;
+      border-radius: 15px;
+      padding: 20px;
+      background-color: #fdeaf4;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      width: 60%;
+      max-width: 600px;
+    }
+
+    .asignatura {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    .stars {
+      cursor: pointer;
+    }
+
+    .star {
+      font-size: 20px;
+      color: #d78eb4;
+    }
+
+    .star.filled {
+      color: #80004d;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .botones button {
+      padding: 8px 16px;
+      border-radius: 10px;
+      border: 2px solid #80004d;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .botones button:hover {
+      background-color: #ffd1ec;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Sustituye la URL con tu imagen de botón tipo gofre -->
+    <img id="gofreBtn" src="https://img.icons8.com/ios-filled/50/menu.png" alt="Botón de gofre">
+  </header>
+
+  <dialog id="popup">
+    <h3>ASIGNATURAS FAVORITAS</h3>
+    <div class="asignatura">ÁLGEBRA <div class="stars" data-subject="ÁLGEBRA"></div></div>
+    <div class="asignatura">FÍSICA <div class="stars" data-subject="FÍSICA"></div></div>
+    <div class="asignatura">PROYECTO WEB <div class="stars" data-subject="PROYECTO WEB"></div></div>
+    <div class="asignatura">PROGRAMACIÓN I <div class="stars" data-subject="PROGRAMACIÓN I"></div></div>
+    <div class="asignatura">PROGRAMACIÓN II <div class="stars" data-subject="PROGRAMACIÓN II"></div></div>
+    <div class="asignatura">ELECTRÓNICA BÁSICA <div class="stars" data-subject="ELECTRÓNICA BÁSICA"></div></div>
+    <div class="asignatura">PROYECTO CDIO <div class="stars" data-subject="PROYECTO CDIO"></div></div>
+
+    <div class="botones">
+      <button id="cancelar">CANCELAR</button>
+      <button id="guardar">GUARDAR</button>
+    </div>
+  </dialog>
+
+  <script>
+    const gofreBtn = document.getElementById('gofreBtn');
+    const popup = document.getElementById('popup');
+    const cancelar = document.getElementById('cancelar');
+
+    gofreBtn.onclick = () => {
+      popup.showModal();
+    };
+
+    cancelar.onclick = () => {
+      popup.close();
+    };
+
+    document.querySelectorAll('.stars').forEach(container => {
+      for (let i = 1; i <= 5; i++) {
+        const star = document.createElement('span');
+        star.innerHTML = '★';
+        star.classList.add('star');
+        star.dataset.value = i;
+        star.onclick = function () {
+          const all = container.querySelectorAll('.star');
+          all.forEach(s => s.classList.remove('filled'));
+          for (let j = 0; j < i; j++) {
+            all[j].classList.add('filled');
+          }
+        };
+        container.appendChild(star);
+      }
+    });
+  </script>
+
+</body>
+</html>

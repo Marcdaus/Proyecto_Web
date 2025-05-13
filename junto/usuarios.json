@@ -1,0 +1,16 @@
+[
+    {
+        "nombre": "marc",
+        "institucion": "marc",
+        "email": "marc@marc",
+        "password": "2",
+        "rol": "cliente"
+    },
+    {
+        "nombre": "marc",
+        "institucion": "marc",
+        "email": "marc@marc",
+        "password": "2",
+        "rol": "cliente"
+    }
+]
