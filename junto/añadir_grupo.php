@@ -13,7 +13,7 @@
 <main>
     <!-- Menú migas de pan -->
      <div>
-     <a href="crear_tareas.php">CREAR TAREA</a>/ <a href="añadir_grupo.php">AÑADIR GRUPO</a>
+      <a href="tareas.php"> TAREAS</a>/<a href="crear_tareas.php">CREAR TAREA</a>/ <a href="añadir_grupo.php">AÑADIR GRUPO</a>
     </div>
 
     <!-- Contenido de los grupos-->
@@ -23,9 +23,9 @@
     <section class="Botones">
     <!-- Botones de envio -->
         <button onclick="window.location.href='nuevogrupo.php'">Nuevo grupo</button>
-        <button onclick="window.location.href='Tareas 1.html'">Cancelar</button>
-        <button onclick="window.location.href='Tareas.html'">Guardar</button>
+        <button onclick="window.location.href='editar_tareas.php'">Cancelar</button>
+        <button onclick="comprobacion_grupos_hechos()">Guardar</button>
     </section>
 </main>
-</body>
+</body> 
 </html>

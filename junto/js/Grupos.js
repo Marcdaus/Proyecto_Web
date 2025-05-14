@@ -62,3 +62,67 @@
         localStorage.setItem('grupoAEditar', JSON.stringify(grupo));
         localStorage.setItem(`miembros_${grupo.nombre}`, JSON.stringify(grupo.miembros));
         }      
+
+
+
+  function comprobacion_grupos_hechos() {
+
+    //Crea el dialog y le inserta el texto y los botones
+    const dialog = document.createElement("dialog");
+    dialog.innerHTML = `
+        <p>¿ESTÁS SEGURO DE REALIZAR LOS CAMBIOS?</p>
+    `;
+    //Botones
+    const boton_aceptar = document.createElement("button");
+    boton_aceptar.textContent = "GUARDAR";
+
+    const boton_cancelar = document.createElement("button");
+    boton_cancelar.textContent = "CANCELAR";
+
+    //Se crea el dialog con su texto correspondiente
+    dialog.appendChild(boton_aceptar);
+    dialog.appendChild(boton_cancelar);
+    document.body.appendChild(dialog);
+    dialog.showModal();
+
+    //  Si se pulsa el botón de aceptar
+    boton_aceptar.addEventListener("click", () => {
+        try {
+            //Se cierra el popup anterior
+            dialog.close();
+
+            //Se crea el dialog con su texto correspondiente
+            const confirmDialog = document.createElement("dialog");
+            confirmDialog.innerHTML = '<p>CAMBIOS REALIZADOS CORRECTAMENTE</p>';
+            document.body.appendChild(confirmDialog);
+            confirmDialog.showModal();
+
+            //Se automatiza la desaparición del popup
+            setTimeout(() => {
+              confirmDialog.close();
+              window.location.href='tareas.php';
+            }, 1000);
+            
+        } catch (error) {
+            //Se cierra el popup anterior
+            dialog.close();
+
+            //Se crea el dialog con su texto correspondiente
+            const errorDialog = document.createElement("dialog");
+            errorDialog.innerHTML = '<p>HA HABIDO UN ERROR. <br> VUELVE A INTENTARLO O ESCRIBE UNA INCIDENCIA</p>';
+            document.body.appendChild(errorDialog);
+            errorDialog.showModal();
+
+            //Se automatiza la desaparición del popup
+            setTimeout(() => {
+              errorDialog.close();
+              console.error("Ha habido un error")
+            }, 1000);
+
+        }
+    });
+    //Si se pulsa el de cancelar se cierra el popup
+    boton_cancelar.addEventListener("click", () => {
+        dialog.close();
+    })
+  }

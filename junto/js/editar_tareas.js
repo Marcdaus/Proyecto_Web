@@ -175,7 +175,7 @@ function cancelar() {
     cancelButtonText: "No"
   }).then((result) => {
     if (result.isConfirmed) {
-      window.location.href = "tareas.html";
+      window.location.href = "tareas.php";
     }
   });
 }

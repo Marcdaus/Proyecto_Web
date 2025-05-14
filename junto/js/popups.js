@@ -73,7 +73,7 @@ export function comprobacion_enviar() {
 //===================================================================================
 //                            GUARDAR GRUPOS PARTE AÑADIR
 //===================================================================================
-export function comprobacion_grupos_hechos() {
+ function comprobacion_grupos_hechos() {
 
     //Crea el dialog y le inserta el texto y los botones
     const dialog = document.createElement("dialog");

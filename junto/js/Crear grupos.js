@@ -16,7 +16,7 @@ async function cargarAlumnos() {
     const lista = document.getElementById('lista_alumnos');
     lista.innerHTML = '';
   
-    // Filtrar alumnos por asignatura actual
+    // Filtrar alumnos por asignatura actual (Más a futuro)
     //const alumnosFiltrados = data.alumnos.filter(a => a.asignatura === asignaturaActual);
 
    

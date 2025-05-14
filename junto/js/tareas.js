@@ -62,7 +62,7 @@
 
       /* Comprobamos si la fecha de apertura de la tarea incluye la cadena que el usuario escribió y si eltexto conicide con alguna tarea, 
       para ello utilizamos toLowerCase que convierte los dos textos en minuscula par poder comprarlos mejor *//*
-      tareas.filter(tarea => {return tarea.fecha_apertura.includes(texto) || tarea.nombre.toLowerCase().includes(texto.toLowerCase());})
+      tareas.filter(tarea => {return tarea.fecha_apertura.includes(texto) || tarea.nombre.toLowerCase().includes(texto.toLowerCase());})/*
         // con el forEach vamos comprobando cada tarea
         .forEach(tarea => {
           const fila = document.createElement('tr');
@@ -90,8 +90,8 @@
 
           cuerpo_tabla.appendChild(fila); // añadimos la fila 
         });
-    }
-
+    }*/
+/*
     // Función para eliminar una tarea la funcion debe de ser asincrona para que la tarea no se elimine hasta que no se confirme
     async function eliminarTarea(id) {
 
@@ -254,8 +254,8 @@ function editarTarea(id) {
 }
 
 // Cargar tareas al iniciar
-fetchTareas();
-*/
+fetchTareas();*/
+
 let vista_Profesor = true;
 
 const cuerpo_tabla = document.getElementById('cuerpo_tabla');
@@ -269,7 +269,6 @@ let tareas = []; // Se cargará desde fetch
 async function fetchTareas() {
   try {
     const response = await fetch('json/Tareas.json');
-    if (!response.ok) throw new Error('Error al cargar las tareas');
     tareas = await response.json();
     tabla_tareas(buscador.value);
   } catch (error) {
@@ -317,44 +316,71 @@ function tabla_tareas(texto = '') {
       tarea.fecha_apertura.includes(texto) ||
       tarea.nombre.toLowerCase().includes(texto.toLowerCase())
     )
-    .forEach(tarea => {
-      const fila = document.createElement('div');
-      fila.classList.add('fila_tarea'); // Puedes aplicar estilos tipo grid/flex en CSS
+   // Usamos un Set para controlar si ya hemos añadido la tarea al DOM
+const tareasAgregadas = new Set();
 
-      if (vista_Profesor) {
-        fila.innerHTML = `
-          <div><a href="info_tarea_profesor.php" id="tarea_seleccionada">${tarea.nombre}</a></div>
-          <div>${tarea.fecha_apertura}</div>
-          <div>${tarea.fecha_cierre}</div>
-          <div>
-            <button type="button" onclick="editarTarea(${tarea.id})"><img src="" alt="Editar" /></button>
-            <button type="button" onclick="eliminarTarea(${tarea.id})"><img src="" alt="Eliminar" /></button>
-          </div>
-        `;
-      } else {
-        fila.innerHTML = `
-          <div><a href="#" onclick="guardarTarea(${tarea.id})">${tarea.nombre}</a></div>
-          <div>${tarea.fecha_apertura}</div>
-          <div>${tarea.fecha_cierre}</div>
-          <div>${tarea.fecha_entrega}</div>
-          <div>${tarea.estado}</div>
-        `;
-      }
+for (const tarea of tareas) {
+  // Verificar si la tarea ya fue agregada por nombre (para evitar duplicados)
+  if (tareasAgregadas.has(tarea.nombre)) {
+    continue; // Si la tarea ya está en el Set, la omitimos
+  }
+  
+  // Marca la tarea como agregada para evitar duplicados
+  tareasAgregadas.add(tarea.nombre);
+
+  const fila = document.createElement('div');
+  fila.classList.add('fila_tarea'); // Puedes aplicar estilos tipo grid/flex en CSS
+
+  if (vista_Profesor) {
+    fila.innerHTML = `
+      <div><a href="#" onclick="guardarTarea_profe(${tarea.id})">${tarea.nombre}</a></div>
+      <div>${tarea.fecha_apertura}</div>
+      <div>${tarea.fecha_cierre}</div>
+      <div>
+        <button type="button" onclick="editarTarea(${tarea.id})"><img src="" alt="Editar" /></button>
+        <button type="button" onclick="eliminarTarea(${tarea.id})"><img src="" alt="Eliminar" /></button>
+      </div>
+    `;
+  } else {
+    fila.innerHTML = `
+      <div><a href="#" onclick="guardarTarea(${tarea.id})">${tarea.nombre}</a></div>
+      <div>${tarea.fecha_apertura}</div>
+      <div>${tarea.fecha_cierre}</div>
+      <div>${tarea.fecha_entrega}</div>
+      <div>${tarea.estado}</div>
+    `;
+  }
 
       cuerpo_tabla.appendChild(fila);
-    });
+    };
 }
 
 function guardarTarea(id){
+  console.log(id)
+  
   //Se guarda la tarea seleccionada
   const tarea = tareas.find(t => t.id === id);
-  localStorage.setItem("tarea_a_ver", JSON.stringify(tarea));
+  localStorage.setItem("tarea_ver", JSON.stringify(tarea));
   console.log(tarea);
   if(!tarea){
     //href="info_tarea.php"
     console.error("va mal");
   }
+  
   window.location.href="info_tarea.php"
+}
+function guardarTarea_profe(id){
+  
+  //Se guarda la tarea seleccionada
+  const tarea = tareas.find(t => t.id === id);
+  localStorage.setItem("tarea_ver_profe", JSON.stringify(tarea));
+  console.log(tarea);
+  if(!tarea){
+    //href="info_tarea.php"
+    console.error("va mal");
+  }
+  
+  window.location.href="info_tarea_profesor.php"
 }
 
 // Función para eliminar una tarea

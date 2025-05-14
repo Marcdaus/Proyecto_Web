@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // Obtener y parsear el objeto desde localStorage
-  const tareaJSON = localStorage.getItem("tarea_a_ver");
+  const tareaJSON = localStorage.getItem("tarea_ver");
 
   if (!tareaJSON) {
     console.warn("No se encontró la tarea en localStorage");
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     `;
   }
-
+  //Si la tarea no tiene adjunto lo notifica
   if (tarea.adjunto==="null") {
     adjuntosDiv.innerHTML = "<p>No hay archivos adjuntos disponibles.</p>";
   }
