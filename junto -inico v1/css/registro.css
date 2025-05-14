@@ -1,0 +1,46 @@
+/*Variables*/
+:root {
+    --fondogris-translucido: rgba(115, 115, 115, 0.5);
+    --blanco: white
+  }
+  
+  body {
+    background-color: var(--color-principal);
+  }
+/*ayudan tanto a dar formato como a cambiar de formulario____*/
+.formulario {
+    display: none;   /*establece que el formulario no se ve*/
+  }
+.formulario.active {
+    display: block; /*permite que se vea y actuacomo bloque*/
+  }
+/*__________________________________________________________*/
+
+body {
+    background-image: url('../img/fondo_registro.png');
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+.div_texto_registro {
+    /*como necesitamos que se a translucido hemos pasado el color #737373 rgba y de esta maner
+    se evite que afecte a los demas componentes del div por ejemplo si hubieramos utilizado el opacity*/
+    background-color: var(--fondogris-translucido) ; 
+    color: var(--blanco); 
+    height: 100vh;
+    width: 50%; 
+  }
+.div_registro{
+    background-color: var(--blanco); 
+    color: black; 
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 100vh; 
+}
+#registro{
+    display: flex;
+}
