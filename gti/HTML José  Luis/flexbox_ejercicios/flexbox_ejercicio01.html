@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=2">
+    <title>Ejercicio 1 flexbox</title>
+    <style>
+        section{
+            width: 50px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: row; /*para que se pongan horizontal o vertical*/
+            flex-wrap: wrap; /*si no cabe pasa abajo*/
+            .Caja_1 {background-color: rgb(46, 153, 252);}
+            .Caja_2 {background-color: rgb(129, 255, 118);}
+            .Caja_3 {background-color: rgb(255, 118, 248);}
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <article class="Caja_1">Caja 1</article>
+        <article class="Caja_2">Caja 2</article>
+        <article class="Caja_3">Caja 3</article>
+    </section>
+</body>
+</html>
