@@ -1,0 +1,136 @@
+:root {
+    --primary: #94AFFF;
+    --secondary: #6F6F6F;
+    --light-bg: #EDF2FF;
+    --white: #FFFFFF;
+    --black: #000000;
+    --border-color: #D9D9D9;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--white);
+    margin: 0;
+    padding: 20px;
+    color: var(--black);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* breadcrumb */
+.menu_migas_pan {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.menu_migas_pan a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu_migas_pan a:hover {
+    text-decoration: underline;
+}
+
+/* Dporcentaje */
+.porcentaje {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.porcentaje_aprobados {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* buscador */
+.buscador {
+    margin: 20px 0;
+    position: relative;
+}
+
+.buscador input[type="search"] {
+    width: 300px;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: var(--white);
+}
+
+.buscador::before {
+    content: "🔍";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary);
+}
+
+.buscador input[type="search"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(148, 175, 255, 0.3);
+}
+
+/* tareas */
+.tabla_tareas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tabla_tareas th {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.tabla_tareas td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tabla_tareas tr:nth-child(even) {
+    background-color: var(--light-bg);
+}
+
+.tabla_tareas tr:hover {
+    background-color: rgba(148, 175, 255, 0.1);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .buscador input[type="search"] {
+        width: 100%;
+    }
+    
+    .tabla_tareas {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .menu_migas_pan {
+        font-size: 0.9rem;
+    }
+    
+    .porcentaje {
+        font-size: 1rem;
+    }
+    
+    .buscador::before {
+        left: 15px;
+    }
+}

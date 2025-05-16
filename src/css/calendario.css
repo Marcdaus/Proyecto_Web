@@ -1,0 +1,177 @@
+:root {
+  --color-primario: #94AFFF;        /* Azul principal */
+  --color-secundario: #6F6F6F;      /* Gris oscuro */
+  --color-fondo-claro: #FFFAED;     /* Azul claro para fondo */
+  --color-blanco: #FFFFFF;
+  --color-negro: #000000;
+  --color-examen: #FFB6C1;          /* Rosa claro para exámenes */
+  --color-practico: #C1FFC1;        /* Verde claro para prácticas */
+  --color-examen-indicador: #FF6B6B;
+  --color-practico-indicador: #4CAF50;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-blanco);
+  margin: 0;
+  padding: 20px;
+  color: var(--color-negro);
+  overflow-x: hidden;
+}
+
+h1 {
+  color: var(--color-primario);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* Contenedor principal para alinear calendario + info */
+main {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-left: 25%;
+  margin-top: 30px;
+}
+
+/* Selector de mes */
+.desplegable {
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  border: 2px solid var(--color-negro);
+  border-radius: 25px;
+  background-color: var(--color-blanco);
+  font-size: 16px;
+  color: var(--color-negro);
+  cursor: pointer;
+}
+
+/* Calendario */
+.calendario {
+  border-collapse: collapse;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed;
+  width: 100%;
+  max-width: 700px;
+  background-color: var(--color-blanco);
+}
+
+.encabezadoo_tabla {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.calendario th,
+.calendario td {
+  text-align: center;
+  padding: 12px;
+  border: 1px solid var(--color-secundario);
+}
+
+.calendario td {
+  height: 80px;
+  vertical-align: top;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.calendario td.celda_vacia {
+  background-color: var(--color-fondo-claro);
+  color: var(--color-secundario);
+}
+
+.calendario td.selected {
+  background-color: var(--color-fondo-claro);
+  box-shadow: inset 0 0 0 2px var(--color-primario);
+}
+
+.num_dia {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.evento {
+  font-size: 11px;
+  padding: 3px 6px 3px 15px;
+  margin: 2px 0;
+  border-radius: 8px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.evento::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.evento[data-type="test"] {
+  background-color: var(--color-examen);
+}
+.evento[data-type="test"]::before {
+  background-color: var(--color-examen-indicador);
+}
+
+.evento[data-type="practico"] {
+  background-color: var(--color-practico);
+}
+.evento[data-type="practico"]::before {
+  background-color: var(--color-practico-indicador);
+}
+
+.hoy {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+.hoy .num_dia {
+  color: var(--color-blanco);
+}
+
+/* Panel de información al lado */
+#posit-info {
+  flex: 1;
+  max-width: 300px;
+  background-color: var(--color-fondo-claro);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid var(--color-secundario);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+#posit-info p,
+#posit-info li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#posit-info strong {
+  color: var(--color-primario);
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  main {
+    flex-direction: column;
+    margin-left: 0px;
+  }
+
+  .calendario {
+    max-width: 100%;
+  }
+  #posit-info{
+   width: calc(100% - 20px);
+  }
+}
