@@ -1,7 +1,0 @@
-[ 
-      {"id": 1, "estado": "enviada", "fecha_apertura": "29/05/2025", "fecha_cierre": "01/06/2025", "fecha_entrega": "30/05/2025", "nickname": "Villalba Murcia, Marc", "descripción": "hay que realizar lo aprendido en clase", "tipo_tarea": "individual", "ID_asignatura": "fisica", "nombre": "tarea_1", "adjunto":"null"},
-      {"id": 2, "estado": "enviada", "fecha_apertura": "10/05/2025", "fecha_cierre": "20/05/2025", "fecha_entrega": "13/05/2025", "nickname": "Grupo 1", "descripción": "tienes que hacer los programas 1 y 2", "tipo_tarea": "grupal", "ID_asignatura": "programacion", "nombre": "tarea_2","adjunto":"null"},
-      {"id": 1, "estado": "enviada", "fecha_apertura": "29/05/2025", "fecha_cierre": "01/06/2025", "fecha_entrega": "30/05/2025", "nickname": "Cuenca Gil, Mar", "descripción": "hay que realizar lo aprendido en clase", "tipo_tarea": "individual", "ID_asignatura": "fisica", "nombre": "tarea_1", "adjunto":"null"},
-      {"id": 2, "estado": "en_proceso", "fecha_apertura": "10/05/2025", "fecha_cierre": "20/05/2025", "fecha_entrega": "", "nickname": "Grupo 2", "descripción": "tienes que hacer los programas 1 y 2", "tipo_tarea": "grupal", "ID_asignatura": "programacion", "nombre": "tarea_2","adjunto":"null"}
-]
-
