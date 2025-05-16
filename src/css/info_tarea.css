@@ -1,0 +1,162 @@
+:root {
+    --primary: #94AFFF;
+    --secondary: #6F6F6F;
+    --light-bg: #EDF2FF;
+    --white: #FFFFFF;
+    --black: #000000;
+    --border-color: #D9D9D9;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--white);
+    margin: 0;
+    padding: 20px;
+    color: var(--black);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* breadcrumb */
+.menu_migas_pan {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.menu_migas_pan a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu_migas_pan a:hover {
+    text-decoration: underline;
+}
+
+/* icono select task */
+.icono {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.icono img {
+    width: 50px;
+    height: 50px;
+}
+
+.icono p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--secondary);
+    margin: 0;
+}
+
+/* descripción */
+.descripción {
+    background-color: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.descripción h2 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.descripción p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+/* porcentaje */
+.porcentaje {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* tabla de alumnos */
+.tabla-alumnos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tabla-alumnos th {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.tabla-alumnos td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tabla-alumnos tr:nth-child(even) {
+    background-color: var(--light-bg);
+}
+
+/* añadir adjuntos */
+.Añadir_adjuntos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    background-color: var(--white);
+}
+
+.Añadir_adjuntos span:last-child {
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+/* botón de enciar */
+.enviar {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.enviar:hover {
+    background-color: #7a9bff;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .icono {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .tabla-alumnos {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .Añadir_adjuntos {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

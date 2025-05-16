@@ -1,0 +1,191 @@
+:root {
+    --primary: #94AFFF;
+    --secondary: #6F6F6F;
+    --light-bg: #EDF2FF;
+    --white: #FFFFFF;
+    --black: #000000;
+    --border-color: #D9D9D9;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--white);
+    margin: 0;
+    padding: 20px;
+    color: var(--black);
+    line-height: 1.6;
+}
+
+/* breadcrumb nav */
+body > div:first-child {
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+body > div:first-child a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+body > div:first-child a:hover {
+    text-decoration: underline;
+}
+
+/* grupos container */
+#Grupos {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* grupo 1 */
+.grupo {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.grupo h3 {
+    margin: 0 0 15px 0;
+    color: var(--primary);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grupo h3 a {
+    margin-left: 10px;
+}
+
+.grupo h3 img {
+    width: 20px;
+    height: 20px;
+}
+
+/* lista de participantes */
+.grupo ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo li {
+    padding: 8px 12px;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* botones */
+.Botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Botones button {
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.Botones button:first-child {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+}
+
+.Botones button:first-child:hover {
+    background-color: #7a9bff;
+}
+
+.Botones button:nth-child(2) {
+    background-color: var(--white);
+    color: var(--secondary);
+    border: 1px solid var(--border-color);
+}
+
+.Botones button:nth-child(2):hover {
+    background-color: #f5f5f5;
+}
+
+.Botones button:last-child {
+    background-color: var(--secondary);
+    color: var(--white);
+    border: none;
+}
+
+.Botones button:last-child:hover {
+    background-color: #5d5d5d;
+}
+
+/* dialog estilo */
+dialog {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+}
+
+dialog p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+dialog button {
+    margin: 0 10px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+dialog button:first-child {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+}
+
+dialog button:last-child {
+    background-color: var(--white);
+    color: var(--secondary);
+    border: 1px solid var(--border-color);
+}
+
+/* responsive */
+@media (max-width: 600px) {
+    #Grupos {
+        padding: 10px;
+    }
+    
+    .Botones {
+        flex-direction: column;
+    }
+    
+    .Botones button {
+        width: 100%;
+    }
+    
+    dialog {
+        width: 90%;
+        padding: 15px;
+    }
+}
