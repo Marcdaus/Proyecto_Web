@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <!-- Código js del cambio de contraseña y para las notif de error (link) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="js/Cambiar_contraseña.js"defer></script>
+
+    <title>PROA/Cambiar contraseña </title>
+</head>
+<body>
+    <h2>CAMBIAR CONTRASEÑA</h2>
+    <!-- Aquí empieza el contenedor del formulario -->
+    <main class="Contenedor_inputs_password">
+        <input id="volver" type="button" value="PROA" onclick="window.location.href='home.html'">
+        <!-- Aquí comienza el formulario para el cambio de contraseña -->
+        <form id="Inputs_password">
+
+            <!-- Texto y estructura del input de la contraseña vieja -->
+            <label for="password_vieja">INTRODUCE TU CONTRASEÑA ACTUAL</label>
+            <input id="password_vieja" type="password" placeholder="Introduce tu contraseña actual" required autofocus>
+
+            <!-- Texto y estructura del input de repetir la contraseña nueva -->
+            <label for="password_nueva">INTRODUCE TU NUEVA CONTRASEÑA</label>
+            <input id="password_nueva" type="password" placeholder="Introduce nueva contraseña" required>
+
+            <!-- Texto y estructura del input de la contraseña vieja -->
+            <label for="password_repetida">REPITE LA NUEVA CONTRASEÑA</label>
+            <input id="password_repetida" type="password" placeholder="Repite la nueva contraseña" required>
+            
+        <!-- Aquí están los botones de enviar y cancelar del formulario que cambia la contraseña-->
+        <input id="Enviar" type="submit"value="Enviar">
+        <input id="Cancelar" type="button" value="Cancelar" onclick="window.location.href='home.html'">
+        </form>
+    </main>
+    
+</body>
+</html>
